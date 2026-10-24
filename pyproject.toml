@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "licenseengine"
+version = "1.0.0"
+description = "SPDX licence-expression auditor that evaluates a dependency graph against a policy and explains every obligation it finds."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Konain Sultan Khan (KK)", email = "kkdev9715@gmail.com"}]
+keywords = ["licensing", "spdx", "compliance", "sbom", "supply-chain"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Security",
+]
+
+[project.urls]
+Homepage = "https://github.com/kkcyber2/licenseengine"
+Repository = "https://github.com/kkcyber2/licenseengine"
+Issues = "https://github.com/kkcyber2/licenseengine/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+licenseengine = "licenseengine.cli:main"
+
+[tool.setuptools]
+packages = ["licenseengine"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
